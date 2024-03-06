@@ -1,0 +1,9 @@
+{
+  "mixinConfigs": [],
+  "entrypoints": [
+    "com.javaskid.compass.impl.Compass"
+  ],
+  "hooks": [
+    "com.javaskid.compass.impl.hooks.impl.CompassMainHook"
+  ]
+}

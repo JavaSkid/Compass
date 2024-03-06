@@ -1,0 +1,32 @@
+import org.gradle.internal.jvm.Jvm
+
+plugins {
+    id 'application'
+    id 'c'
+    id 'java'
+    id "com.github.weave-mc.weave-gradle" version "649dba7468"
+}
+
+group = 'com.javaskid'
+version = '1.0'
+
+minecraft.version("1.8.9")
+
+repositories {
+    mavenCentral()
+    maven { url = "https://jitpack.io"}
+    maven { url = "https://repo.spongepowered.org/maven/" }
+}
+
+dependencies {
+    compileOnly "com.github.weave-mc:weave-loader:v0.2.4"
+    compileOnly "org.spongepowered:mixin:0.8.5"
+}
+
+tasks.compileJava {
+    options.release.set(11)
+}
+
+jar {
+    destinationDirectory = file(System.getenv("userprofile") + "/.weave/mods")
+}
